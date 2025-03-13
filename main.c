@@ -29,6 +29,7 @@ void apply_physics(){
         for (int j = 0; j < current_index; j++){
             if (i != j && 
                 rectangles[i].y >= rectangles[j].y - 20.f && 
+                rectangles[i].y <= rectangles[j].y + 20.f && 
                 rectangles[i].x + 20.f >= rectangles[j].x && 
                 rectangles[i].x <= rectangles[j].x + 20.f){
 
