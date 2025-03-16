@@ -2,6 +2,8 @@
 #include <SDL3/SDL.h>
 #include <stdlib.h>
 #include "sdl_setup.h"
+#include <glm/glm.hpp>
+#include <imgui.h>
 
 #define MAX_RECTANGLES 100
 SDL_FRect rectangles[MAX_RECTANGLES];
@@ -44,6 +46,8 @@ void apply_physics(){
 
 int main(int argc, char* argv[]) {
     bool done = false;
+
+    glm::vec2 velocity = glm::vec2(5.f,6.f);
     
     SDLContext *context = (SDLContext*)malloc(sizeof(SDLContext));
 
