@@ -10,10 +10,11 @@ set(SDL_SHARED OFF CACHE BOOL "" FORCE)
 set(SDL_STATIC ON CACHE BOOL "" FORCE)
 
 add_subdirectory(external/SDL)
+add_subdirectory(external/glm)
 
 add_executable(${PROJECT_NAME} WIN32  main.c
                                       sdl_setup.c)
 
 include_directories(${CMAKE_SOURCE_DIR})
-target_link_libraries(${PROJECT_NAME} PRIVATE SDL3::SDL3-static)
+target_link_libraries(${PROJECT_NAME} PRIVATE SDL3::SDL3-static glm::glm)
 
