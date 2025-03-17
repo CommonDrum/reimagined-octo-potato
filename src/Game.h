@@ -16,6 +16,7 @@ class Game{
     void Run();
     void ProcessInput();
     void Update();
+    void Render();
 };
 
 #endif // !GAME_H

@@ -37,6 +37,7 @@ void Game::Run(){
    while (isRunning) {
     ProcessInput();
     Update();
+    Render();
    }
 }
 
@@ -51,4 +52,13 @@ void Game::ProcessInput(){
 
 void Game::Update(){
 
+}
+
+void Game::Render(){
+  SDL_SetRenderDrawColorFloat(renderer, 0.0f, 0.0f, 0.0f, 1.0f);
+  SDL_RenderClear(renderer);
+  SDL_SetRenderDrawColorFloat(renderer, 1.0f, 0.0f, 0.0f, 1.0f); // Red
+  SDL_FRect rectangle = (SDL_FRect){330,220, 20.0f, 20.0f};
+  SDL_RenderFillRect(renderer, &rectangle);
+  SDL_RenderPresent(renderer);
 }
