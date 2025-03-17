@@ -23,6 +23,8 @@ Game::Game(int width, int height) {
         SDL_Quit();
         return;
     }
+
+    isRunning = true;
 }
 
 Game::~Game(){
@@ -32,11 +34,19 @@ Game::~Game(){
 }
 
 void Game::Run(){
-
+   while (isRunning) {
+    ProcessInput();
+    Update();
+   }
 }
 
 void Game::ProcessInput(){
-
+  SDL_Event event;
+  while (SDL_PollEvent(&event)) {
+    if (event.type == SDL_EVENT_QUIT) {
+      isRunning = false;
+    }
+  }
 }
 
 void Game::Update(){

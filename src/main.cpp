@@ -7,9 +7,7 @@
 int main(int argc, char* argv[]) {
     
     Game game(640,480);
-    
-    std::cout << "wow";
-
+    game.Run();
     return 0;
 }
 
