@@ -1,15 +1,14 @@
 
 #include <SDL3/SDL.h>
-#include <stdlib.h>
-#include "sdl_setup.h"
-#include <glm/glm.hpp>
-#include <imgui.h>
 #include "Game.h"
+#include <iostream>
 
 
 int main(int argc, char* argv[]) {
     
-    Game game;
+    Game game(640,480);
+    
+    std::cout << "wow";
 
     return 0;
 }

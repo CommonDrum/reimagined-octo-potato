@@ -1,16 +1,18 @@
 #ifndef GAME_H
 #define GAME_H
 
+#include <SDL3/SDL.h>
+
 class Game{
   private:
+    SDL_Window* window;
+    SDL_Renderer* renderer;
 
   public:
-    Game();
+    Game(int width, int height);
     ~Game();
-    void Init();
-    void Run();
-    void Destroy();
 
+    void Run();
     void ProcessInput();
     void Update();
 };
